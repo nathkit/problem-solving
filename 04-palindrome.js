@@ -1,8 +1,10 @@
 const specialChars = /[\s!@#$%^&*()_\-+=\[\]\\/{}<>?:;"'`~.,|]/g;
 
 const isPalindrome = (str) => {
-    const cleanStr = str.toLowerCase().replace(specialChars, "")
-    const reverseStr = cleanStr.split("").join("")
+    const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, "")
+    // console.log(cleanStr)
+    const reverseStr = cleanStr.split("").reverse().join("")
+    // console.log(reverseStr)
     return cleanStr === reverseStr
 }
 
